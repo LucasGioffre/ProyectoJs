@@ -3,9 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Tienda de Musica | Simulador E-Commerce</title>
 </head>
 <body>
-    <script src="./script.js"></script>
+    <header>
+        <h1>Bienvenido a la Tienda de Musica</h1>
+        <h2>Haz Click en "Agregar al Carrito" en los productos que desea comprar.</h2>
+    </header>
+    <main>
+        <h3>Guitarras</h3>
+        <div class="guitarrasContainer">
+            <div class="prodGuitarras guitar1">
+                <img src="./assets/img/guitarra1.jpg" alt="">
+                <p>Guitarra Electrica Ibanez Grx40ca Serie Gio Candy Apple</p>
+                <p class="precio">$470000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodGuitarras guitar2">
+                <img src="./assets/img/guitarra2.jpg" alt="">
+                <p>Guitarra Sx Ef3d-cs Ef3 Series Lp Rw Mango Encolado</p>
+                <p class="precio">$310500</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodGuitarras guitar3">
+                <img src="./assets/img/guitarra3.jpg" alt="">
+                <p>Guitarra Electrica EpiPhone Les Paul Classic Color Negra</p>
+                <p class="precio">$650200</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodGuitarras guitar4">
+                <img src="./assets/img/guitarra4.jpg" alt="">
+                <p>Guitarra Electrica Esp Ltd Ec401 Ow Eclipse Emg Blanca</p>
+                <p class="precio">$865000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+        </div>
+        <h3>Bajos</h3>
+        <div class="bajosContainer">
+            <div class="prodBajos bajo1">
+                <img src="./assets/img/bajo1.jpg" alt="">
+                <p>Bajo Cort Action Pj Opb Action Precision Jazz, Color Negro</p>
+                <p class="precio">$565000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBajos bajo2">
+                <img src="./assets/img/bajo2.jpg" alt="">
+                <p>Bajo Electrico Ibanez Gsr180bem 4 Cuerdas Blue</p>
+                <p class="precio">$472000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBajos bajo3">
+                <img src="./assets/img/bajo3.jpg" alt="">
+                <p>Bajo Electrico Yamaha Trbx305 Serie Rbx De 5 Cuerdas</p>
+                <p class="precio">$645000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBajos bajo4">
+                <img src="./assets/img/bajo4.jpg" alt="">
+                <p>Bajo Ibanez Gsr200pw Serie Gsr 4 Cuerdas Pearl White</p>
+                <p class="precio">$421000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+        </div>
+        <h3>Baterias</h3>
+        <div class="bateriasContainer">
+            <div class="prodBaterias bateria1">
+                <img src="./assets/img/bateria1.jpg" alt="">
+                <p>Bateria Acustica Mapex Ve5294ftvc Venus Steel Blue</p>
+                <p class="precio">$1000000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBaterias bateria2">
+                <img src="./assets/img/bateria2.jpg" alt="">
+                <p>Bateria Yamaha Rdp2f5sLG Serie Rydeen Gris Sin Fierros</p>
+                <p class="precio">$850000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBaterias bateria3">
+                <img src="./assets/img/bateria3.jpg" alt="">
+                <p>Bateria Tama Vd36mwsvbg Silverstar 16+10+13 Vintage</p>
+                <p class="precio">$1200000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+            <div class="prodBaterias bateria4">
+                <img src="./assets/img/bateria4.jpg" alt="">
+                <p>Bateria Electronica 5 Cuerpos Platillos Alesis Crimson Ii</p>
+                <p class="precio">$1350000</p>
+                <input type="button" value="AGREGAR AL CARRITO">
+            </div>
+        </div>
+        <!-- Sección del Carrito -->
+        <div class="carritoContainer" id="carrito">
+            <h3>Carrito de Compras</h3>
+            <ul id="listaCarrito"></ul>
+            <p id="totalCarrito">TOTAL: $0</p>
+            <form action="">
+                <label for="">Nombre:</label>
+                <input id="nombre" type="text" placeholder="Ingrese su Nombre...">
+                <label for="">Apellido:</label>
+                <input id="apellido" type="text" placeholder="Ingrese su Apellido...">
+                <label for="">Email:</label>
+                <input id="email" type="email" name="email" class="email" placeholder="Ingrese su Email...">
+            </form>
+            <p id="mensajeError">Debe completar todos los campos del formulario para finalizar la compra.</p>
+            <input id="finalizarCompra" type="button"  class="btnFinalizar" value="FINALIZAR COMPRA">
+            
+        </div>
+        <div id="mensaje" class="mensaje">
+            <span id="cerrarMensaje" class="cerrar">X</span>
+            <span id="textoMensaje" class="msjTexto"></span>
+        </div>
+    </main>
+    
+    <script src="./js/script.js"></script>
 </body>
 </html>

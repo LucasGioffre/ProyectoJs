@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+* {
+  font-family: "Cairo", sans-serif;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.guitarrasContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: 350px;
+  gap: 5px;
+  justify-content: center;
+  align-items: stretch;
+  grid-template-areas: "guitar1 guitar2 guitar3 guitar4";
+}
+
+.prodGuitarras {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.prodGuitarras img {
+  width: 150px;
+}
+
+.prodGuitarras p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+
+.precio {
+  font-weight: bold;
+}
+
+.prodGuitarras input {
+  background-color: #d42020;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: white;
+}
+
+.guitar1 {
+  grid-area: guitar1;
+}
+
+.guitar2 {
+  grid-area: guitar2;
+}
+
+.guitar3 {
+  grid-area: guitar3;
+}
+
+.guitar4 {
+  grid-area: guitar4;
+}
+
+.bajosContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: 350px;
+  gap: 5px;
+  justify-content: center;
+  align-items: stretch;
+  grid-template-areas: "bajo1 bajo2 bajo3 bajo4";
+}
+
+.prodBajos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.prodBajos img {
+  width: 150px;
+}
+
+.prodBajos p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+
+.prodBajos input {
+  background-color: #d42020;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: white;
+}
+
+.bajo1 {
+  grid-area: bajo1;
+}
+
+.bajo2 {
+  grid-area: bajo2;
+}
+
+.bajo3 {
+  grid-area: bajo3;
+}
+
+.bajo4 {
+  grid-area: bajo4;
+}
+
+.bateriasContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: 350px;
+  gap: 5px;
+  justify-content: center;
+  align-items: stretch;
+  grid-template-areas: "bateria1 bateria2 bateria3 bateria4";
+}
+
+.prodBaterias {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.prodBaterias img {
+  width: 150px;
+}
+
+.prodBaterias p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+
+.prodBaterias input {
+  background-color: #d42020;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: white;
+}
+
+.bateria1 {
+  grid-area: bateria1;
+}
+
+.bateria2 {
+  grid-area: bateria2;
+}
+
+.bateria3 {
+  grid-area: bateria3;
+}
+
+.bateria4 {
+  grid-area: bateria4;
+}
+
+input:hover {
+  background-color: #d65555;
+  cursor: pointer;
+}
+
+.carritoContainer p {
+  margin-left: 10px;
+}
+
+.btnFinalizar {
+  margin-left: 45.3%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #d42020;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: white;
+}
+
+.carritoContainer ul {
+  margin-left: 10px;
+}
+
+form {
+  display: flex;
+}
+
+form label {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+form input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form input:hover {
+  background-color: rgb(214, 212, 212);
+}
+
+.mensaje {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el mensaje */
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #d42020;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mensaje.show {
+  display: block; /* Mostrar cuando sea necesario */
+  opacity: 1;
+}
+
+.cerrar {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  cursor: pointer;
+  font-size: 15px;
+  color: black;
+}
+
+.msjTexto {
+  margin: 10px;
+}
+
+.btnEliminar {
+  padding: 0px 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #d42020;
+  background-color: #d42020;
+  color: white;
+}
