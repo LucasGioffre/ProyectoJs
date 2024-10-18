@@ -1,25 +1,6 @@
-const prodGuitarras = [
-    {nombre: "Guitarra Electrica Ibanez Grx40ca Serie Gio Candy Apple", precio: 470000},
-    {nombre: "Guitarra Sx Ef3d-cs Ef3 Series Lp Rw Mango Encolado", precio: 310500},
-    {nombre: "Guitarra Electrica EpiPhone Les Paul Classic Color Negra", precio: 650200},
-    {nombre: "Guitarra Electrica Esp Ltd Ec401 Ow Eclipse Emg Blanca", precio: 865000},
-];
-
-const prodBajos = [
-    {nombre: "Bajo Cort Action Pj Opb Action Precision Jazz, Color Negro", precio: 565000},
-    {nombre: "Bajo Electrico Ibanez Gsr180bem 4 Cuerdas Blue", precio: 472000},
-    {nombre: "Bajo Electrico Yamaha Trbx305 Serie Rbx De 5 Cuerdas", precio: 645000},
-    {nombre: "Bajo Ibanez Gsr200pw Serie Gsr 4 Cuerdas Pearl White", precio: 421000},
-];
-
-const prodBaterias = [
-    {nombre: "Bateria Acustica Mapex Ve5294ftvc Venus Steel Blue", precio: 1000000},
-    {nombre: "Bateria Yamaha Rdp2f5sLG Serie Rydeen Gris Sin Fierros", precio: 850000},
-    {nombre: "Bateria Tama Vd36mwsvbg Silverstar 16+10+13 Vintage", precio: 1200000},
-    {nombre: "Bateria Electronica 5 Cuerpos Platillos Alesis Crimson Ii", precio: 1350000},
-];
-
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+let productos = {}
 
 // Funcion para actualizar el carrito tanto en la pagina como en el LocalStorage
 const actualizarCarrito = () => {
@@ -61,7 +42,7 @@ const agregarAlCarrito = (producto) => {
 
 // Funcion para obtener producto por indice
 const obtenerProductoPorIndice = (index) => {
-    const todosLosProductos = [...prodGuitarras, ...prodBajos, ...prodBaterias];
+    const todosLosProductos = [...productos.guitarras, ...productos.bajos, ...productos.baterias];
     return todosLosProductos[index];
 }
 
@@ -72,8 +53,29 @@ const initBotones = () => {
         boton.addEventListener("click", () => {
             const producto = obtenerProductoPorIndice(index);
             agregarAlCarrito(producto);
+            Toastify({
+                text: "Producto agregado al carrito",
+                duration: 2000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#d42020",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
         });
     });
+};
+
+const cargarProductos = async () => {
+    try {
+        const respuesta = await fetch('./productos.json'); // Asegúrate de que la ruta sea correcta
+        productos = await respuesta.json(); // Carga los productos en la variable
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
 };
 
 // Funcion para calcular el total del carrito
@@ -127,6 +129,7 @@ const validarYFinalizarCompra = () => {
 const eCommerce = () => {
     document.getElementById("finalizarCompra").addEventListener("click", validarYFinalizarCompra);
     initBotones();
+    cargarProductos();
     actualizarCarrito();
 }
 

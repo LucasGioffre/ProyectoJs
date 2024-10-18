@@ -1,0 +1,21 @@
+{
+    "guitarras": [
+        {"nombre": "Guitarra Electrica Ibanez Grx40ca Serie Gio Candy Apple", "precio": 470000},
+        {"nombre": "Guitarra Sx Ef3d-cs Ef3 Series Lp Rw Mango Encolado", "precio": 310500},
+        {"nombre": "Guitarra Electrica EpiPhone Les Paul Classic Color Negra", "precio": 650200},
+        {"nombre": "Guitarra Electrica Esp Ltd Ec401 Ow Eclipse Emg Blanca", "precio": 865000}
+    ],
+    "bajos": [
+        {"nombre": "Bajo Cort Action Pj Opb Action Precision Jazz, Color Negro", "precio": 565000},
+        {"nombre": "Bajo Electrico Ibanez Gsr180bem 4 Cuerdas Blue", "precio": 472000},
+        {"nombre": "Bajo Electrico Yamaha Trbx305 Serie Rbx De 5 Cuerdas", "precio": 645000},
+        {"nombre": "Bajo Ibanez Gsr200pw Serie Gsr 4 Cuerdas Pearl White", "precio": 421000}
+    ],
+    "baterias": [
+        {"nombre": "Bateria Acustica Mapex Ve5294ftvc Venus Steel Blue", "precio": 1000000},
+        {"nombre": "Bateria Yamaha Rdp2f5sLG Serie Rydeen Gris Sin Fierros", "precio": 850000},
+        {"nombre": "Bateria Tama Vd36mwsvbg Silverstar 16+10+13 Vintage", "precio": 1200000},
+        {"nombre": "Bateria Electronica 5 Cuerpos Platillos Alesis Crimson Ii", "precio": 1350000}
+    ]
+}
+  
