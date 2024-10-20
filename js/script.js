@@ -59,20 +59,21 @@ const initBotones = () => {
                 close: true,
                 gravity: "top",
                 position: "right",
-                stopOnFocus: true, // Prevents dismissing of toast on hover
+                stopOnFocus: true,
                 style: {
-                  background: "#d42020",
+                    background: "#d42020",
                 },
-                onClick: function(){} // Callback after click
+                onClick: function(){}
               }).showToast();
         });
     });
 };
 
+// Funcion para cargar los productos del JSON
 const cargarProductos = async () => {
     try {
-        const respuesta = await fetch('./productos.json'); // Asegúrate de que la ruta sea correcta
-        productos = await respuesta.json(); // Carga los productos en la variable
+        const respuesta = await fetch('./productos.json'); // Obtengo los productos del JSON
+        productos = await respuesta.json(); // Cargo los productos en la variable
     } catch (error) {
         console.error('Error al cargar los productos:', error);
     }
